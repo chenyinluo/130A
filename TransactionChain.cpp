@@ -75,7 +75,6 @@ bool Transaction_Chain::Verify(){
 		return false;
 	}
 	check = tail;
-	cout<<"Verify check done"<<endl;
 	while (check != NULL){
 		check->printout();
 		check = check->next;
