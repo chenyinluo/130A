@@ -6,14 +6,15 @@
 #include <ctype.h>
 using namespace std;
 
-void Add_chain(Transaction_Chain chain);
-void Find_chain(Transaction_Chain chain);
+void Add_chain(Transaction_Chain& chain);
+void Find_chain(Transaction_Chain& chain);
 
 
 int main(){
 	int i = 0;
 	char end;
 	Transaction_Chain linked;
+	Transaction_Chain &Link = linked;
 	bool done = false;
 	cout << "Welcome to the transaction-chain application:\n"
 	<< "1. Add a transaction to the chain.\n"
@@ -24,11 +25,11 @@ int main(){
 		cin >> i;
 		switch (i){
 			case 1:{
-				Add_chain(linked);
+				Add_chain(Link);
 				break;
 			}
 			case 2:{
-				Find_chain(linked);
+				Find_chain(Link);
 				break;
 			}
 			case 3:{
@@ -63,7 +64,7 @@ int main(){
 	
 }
 
-void Add_chain(Transaction_Chain chain){
+void Add_chain(Transaction_Chain& chain){
 	string amount;
 	int amountNum;
 	string sender;
@@ -90,7 +91,7 @@ void Add_chain(Transaction_Chain chain){
 	chain.Verify();
 }
 
-void Find_chain(Transaction_Chain chain){
+void Find_chain(Transaction_Chain& chain){
 	string sender;
 	cout << "Please enter sender's name:\n";
 	cin >> sender;

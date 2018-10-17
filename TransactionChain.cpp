@@ -59,6 +59,7 @@ void Transaction_Chain::Find(string senderName){
 
 bool Transaction_Chain::Verify(){
 	Transaction *check = tail;
+	if (check == NULL)return true;
 	while (check->next != NULL){
 		string Counter = to_string(check->next->amount);
 		Counter += check->next->sender;
