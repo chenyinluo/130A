@@ -26,10 +26,18 @@ class Transaction_Chain {
  		string nonce; /*random string that will be used during 
  					hashing for the next transaction*/
  		string hash; //hash of content of previous transaction
- 		Transaction(int amount, string sender, string receiver)://initialize
- 		next(0), amount(amount), sender(sender), receiver(receiver), nonce(""),hash("") {}
+ 		Transaction(int amount, string sender, string receiver){
+ 			this->amount = amount;
+ 			this->sender = sender;
+ 			this->receiver = receiver;
+ 			this->next = NULL;
+ 		}//initialize
+ 		
  		void printout (){
-		       
+ 			cout<<"The Transaction information is: \n";
+ 			cout<<"Amount: "<<amount
+ 			<<" Sender:"<<sender
+ 			<<" Receiver:"<<receiver<<endl;
  		}
  	};
  	Transaction *tail;
